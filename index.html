@@ -12,18 +12,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <script>document.documentElement.dataset.theme=localStorage.getItem('zaid-theme')||((matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');</script>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
     <div class="noise" aria-hidden="true"></div>
     <header class="site-header">
       <a class="logo" href="#top" aria-label="Zaid Ansari, home">ZA<span>.</span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
       <nav id="site-nav" aria-label="Main navigation">
         <a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a>
         <a class="nav-cta" href="mailto:erzaid786786@gmail.com">Let’s talk <span>↗</span></a>
       </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Change color theme"><span class="sun" aria-hidden="true">☀</span><span class="moon" aria-hidden="true">☾</span></button>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+      </div>
     </header>
 
     <main id="top">
@@ -61,6 +67,7 @@
             <p class="project-label">Fintech · Swedbank</p>
             <h3>Credit Score<br />Analysis Tool</h3>
             <p>An event-driven scoring platform that evaluates credit data in real time across distributed services—securely connecting five-plus third-party sources.</p>
+            <ul class="project-details"><li>Built real-time, event-driven score evaluation across distributed services.</li><li>Secured REST APIs with OAuth 2.0 and integrated 5+ external data sources.</li><li>Added Redis caching, pagination, and rate limiting for faster, steadier performance.</li></ul>
             <div class="tags"><span>Java</span><span>Spring Boot</span><span>Kafka</span><span>Redis</span><span>OAuth 2.0</span></div>
           </div>
           <div class="project-metrics">
@@ -73,12 +80,14 @@
           <article class="project-card reveal">
             <div class="project-number">02</div><p class="project-label">Automotive · Subaru of America</p>
             <h3>Scalable Angular Experience</h3><p>Shared components and thoughtful UI interactions for an enterprise Angular application, backed by resilient REST integrations and production support.</p>
+            <ul class="project-details"><li>Created reusable Angular Material components and RxJS data flows.</li><li>Delivered drag-and-drop and responsive interaction improvements.</li><li>Partnered with backend and QA teams to resolve production issues.</li></ul>
             <div class="metric-inline"><strong>80%</strong><span>fewer code smells</span></div>
             <div class="tags"><span>Angular 15</span><span>RxJS</span><span>Material</span><span>TypeScript</span></div>
           </article>
           <article class="project-card rulergo-card reveal">
             <div class="project-number">03</div><p class="project-label">Live product · RulerGo</p>
             <h3>RulerGo</h3><p>A production web product shaped around clear interactions, responsive behavior, and a focused user experience across devices.</p>
+            <ul class="project-details"><li>Designed for clear, task-focused interaction across screen sizes.</li><li>Delivered as a live web product with a responsive production interface.</li></ul>
             <a class="project-link" href="https://rulergo.com" target="_blank" rel="noreferrer">Visit live project <span>↗</span></a>
             <div class="tags"><span>Web product</span><span>Responsive UI</span><span>Production</span></div>
           </article>
@@ -108,12 +117,18 @@
         <p class="kicker">04 / Education</p><div><h3>B.E. Computer Science Engineering</h3><p>Kavayitri Bahinabai Chaudhari North Maharashtra University · 2017–2021</p></div><strong>8.0<small>CGPA</small></strong>
       </section>
 
-      <section class="contact section-shell reveal">
+      <section id="contact" class="contact section-shell reveal">
         <p class="kicker">Have a project or role in mind?</p><h2>Let’s build something<br /><em>that matters.</em></h2>
-        <a class="contact-email" href="mailto:erzaid786786@gmail.com">erzaid786786@gmail.com <span>↗</span></a>
+        <p class="contact-intro">Choose the easiest way to reach me. I’m open to full-stack engineering roles, backend opportunities, and thoughtful product collaborations.</p>
+        <div class="contact-options">
+          <a class="contact-option" href="mailto:erzaid786786@gmail.com?subject=Portfolio%20enquiry"><span class="contact-icon">@</span><span><small>Email</small><strong>erzaid786786@gmail.com</strong></span><b>↗</b></a>
+          <a class="contact-option" href="https://wa.me/917796760721?text=Hi%20Zaid%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noreferrer"><span class="contact-icon">W</span><span><small>WhatsApp</small><strong>Start a conversation</strong></span><b>↗</b></a>
+          <a class="contact-option" href="tel:+917796760721"><span class="contact-icon">☎</span><span><small>Phone</small><strong>+91 77967 60721</strong></span><b>↗</b></a>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer section-shell"><p>© <span id="year"></span> Zaid Ansari</p><div><a href="https://www.linkedin.com/in/zaid-ansari-b6ba051b7/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/Zaid-786" target="_blank" rel="noreferrer">GitHub ↗</a></div><a href="#top">Back to top ↑</a></footer>
+    <div class="floating-contact" aria-label="Quick contact links"><a class="float-whatsapp" href="https://wa.me/917796760721?text=Hi%20Zaid%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noreferrer" aria-label="Message Zaid on WhatsApp"><span>W</span><b>WhatsApp</b></a><a class="float-mail" href="mailto:erzaid786786@gmail.com?subject=Portfolio%20enquiry" aria-label="Email Zaid"><span>✉</span><b>Email me</b></a></div>
   </body>
 </html>
