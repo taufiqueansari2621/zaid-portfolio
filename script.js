@@ -17,12 +17,14 @@ themeButton.addEventListener('click', () => setTheme(document.documentElement.da
 menuButton.addEventListener('click', () => {
   const open = header.classList.toggle('menu-open');
   menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
 });
 
 document.querySelectorAll('#site-nav a').forEach((link) => {
   link.addEventListener('click', () => {
     header.classList.remove('menu-open');
     menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation');
   });
 });
 
